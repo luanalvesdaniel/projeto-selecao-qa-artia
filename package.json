@@ -1,0 +1,19 @@
+{
+  "name": "projeto-selecao-qa-artia",
+  "version": "1.0.0",
+  "description": "projeto-selecao-qa-artia",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/**/*.ts --format json:report/report.json --format html:report/report.html"
+  },
+  "author": "Luan Alves Daniel",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "11.2.0",
+    "@playwright/test": "1.51.1",
+    "@types/node": "22.14.1",
+    "playwright": "1.51.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.3"
+  }
+}
