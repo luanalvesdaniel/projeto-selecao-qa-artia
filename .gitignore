@@ -1,3 +1,4 @@
 node_modules
-report/
-videos/
+report/*.html
+report/*.json
+videos/*.webm
