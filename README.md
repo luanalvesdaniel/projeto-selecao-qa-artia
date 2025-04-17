@@ -77,6 +77,9 @@ npm install
 npm test
 ```
 
+![image](https://github.com/user-attachments/assets/e137b8c6-2432-42e8-ba01-93ca0219a74b)
+
+
 > O relatório será gerado em `report/report.html`.  
 > Em caso de falha, o vídeo do teste será salvo na pasta `videos/`.
 
