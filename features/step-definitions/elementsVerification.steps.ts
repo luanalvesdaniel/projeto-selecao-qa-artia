@@ -1,6 +1,6 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import { page } from '../../../support/hooks';
-import { RegistrationPage } from '../../../pages/RegistrationPage';
+import { page } from '../../support/hooks';
+import { RegistrationPage } from '../../pages/RegistrationPage';
 
 let registrationPage: RegistrationPage;
 

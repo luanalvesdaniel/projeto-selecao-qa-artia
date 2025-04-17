@@ -1,7 +1,7 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import { page } from '../../../support/hooks';
-import { RegistrationPage } from '../../../pages/RegistrationPage';
-import { generateRandomEmail } from '../../../utils/generateEmail';
+import { page } from '../../support/hooks';
+import { RegistrationPage } from '../../pages/RegistrationPage';
+import { generateRandomEmail } from '../../utils/generateEmail';
 
 let registrationPage: RegistrationPage;
 let randomEmail: string;
