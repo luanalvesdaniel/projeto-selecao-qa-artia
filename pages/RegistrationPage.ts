@@ -30,5 +30,45 @@ export class RegistrationPage {
   async clickCreateAccount() {
     await this.page.click('[data-test-id="create-account"]');
   }
-  
+
+  async checkUserName(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="userName"]').isVisible();
+  }
+
+  async checklUserPhone(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="userPhone"]').isVisible();
+  }
+
+  async checkUserEmail(): Promise<boolean> {
+    return await this.page.locator('#userEmail').isVisible();
+  }
+
+  async checkUserPassword(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="userPassword"]').isVisible();
+  }
+
+  async checkCreateButton(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="create-account"]').isVisible();
+  }
+
+  async checkTermsOfUseVisible(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="terms-of-use"]').isVisible();
+  }
+
+  async checkPrivacyPolicyVisible(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="privacy-policy"]').isVisible();
+  } 
+
+  async checkLogin(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="navigate-to-/users/login"]').isVisible();
+  }
+
+  async checkGoogle(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="Google"]').isVisible();
+  }
+
+  async checkLinkedIn(): Promise<boolean> {
+    return await this.page.locator('[data-test-id="LinkedIn"]').isVisible();
+  }
+ 
 }
