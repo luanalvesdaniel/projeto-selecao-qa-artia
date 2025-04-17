@@ -56,10 +56,12 @@ O projeto conta com execução de testes automatizados utilizando Gherkin com ge
 
 ## 🚀 Como executar o projeto
 
+- Necessário instalar o node.js [Node.js](https://nodejs.org/en/download)
+
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/projeto-selecao-qa-artia.git
+git clone https://github.com/luanalvesdaniel/projeto-selecao-qa-artia.git
 cd projeto-selecao-qa-artia
 ```
 
@@ -82,7 +84,7 @@ npm test
 
 > No repositório, ir em **Actions**.  
 > Clicar em **Node.js CI / Rodar Actions / Re-run all jobs**
-> Verificar que executa e em `Jobs / build / Upload HTML Report` é possível baixar o report.html
+> Verificar que executa normalmente e em `Jobs / build / Upload HTML Report` é possível baixar o report.html
 
 ---
 
