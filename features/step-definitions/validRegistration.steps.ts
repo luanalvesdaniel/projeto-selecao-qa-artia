@@ -33,7 +33,7 @@ When('eu clico no botão de criar conta - cadastro válido', async () => {
 });
 
 Then('devo ser redirecionado para a página de boas-vindas - cadastro válido', async () => {
-  // await page.waitForURL('**/welcome', { timeout: 10000 });
-  // const currentURL = page.url();
-  // expect(currentURL).toBe('https://app2.artia.com/welcome');
+  await page.waitForURL('**/welcome', { timeout: 10000 });
+  const currentURL = page.url();
+  expect(currentURL).toBe('https://app2.artia.com/welcome');
 });
