@@ -20,8 +20,7 @@ O projeto conta com execução de testes automatizados utilizando Gherkin com ge
 ├── .github/
 │   ├── workflows/
 │   │   ├── node.js.yml          # Contém job e steps para execução na GitHub Actions
-├── features/
-│   ├── registration/            # Gherkin (cucumber)
+├── features/                    # Gherkin (Cucumber)
 │   │   ├── elements-verification.feature
 │   │   ├── invalid-email.feature
 │   │   ├── invalid-password.feature
@@ -82,8 +81,8 @@ npm test
 ### 4. Executar via GitHub Actions
 
 > No repositório, ir em **Actions**.  
-> Clicar em **Node.js CI/Rodar Actions/Re-run all jobs**
-> Verificar que executa e em `Upload HTML Report` é possível baixar o report.html
+> Clicar em **Node.js CI / Rodar Actions / Re-run all jobs**
+> Verificar que executa e em `Jobs / build / Upload HTML Report` é possível baixar o report.html
 
 ---
 
