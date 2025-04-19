@@ -104,7 +104,7 @@ npm test
 - ❌ Registro com e-mail inválido
   - Garantir que não está sendo informado um e-mail genérico (gmail, hotmail, etc)
 
-> **Novos cenários**: validações visuais de mensagens de erro, cenários com campos obrigatórios em branco, e-mail duplicado, etc. 
+> **Novos cenários**: validações visuais de mensagens de erro, cenários com campos obrigatórios em branco, e-mail duplicado, responsividade com telas mobile/tablets, acesso a links externos, uso de caracteres especiais, informações dos elementos (botões, campos, links) ao alterar o idioma da página, tamanho máximo e mínimo dos campos, etc. 
 
 ---
 
@@ -114,8 +114,12 @@ npm test
   - Campos em branco
   - Email já cadastrado
   - Formato inválido de email
+  - Resposividade em diferentes resoluções de telas (mobile, tablets)
+  - Caracteres especiais
+  - Idiomas da página
+  - Limites dos campos
 - Reutilizar steps comuns em um único arquivo
-- Geração aleatória de nomes, telefones e senhas
+- Geração aleatório de nomes, telefones e senhas
 
 ---
 
