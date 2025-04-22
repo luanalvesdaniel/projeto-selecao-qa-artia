@@ -4,7 +4,9 @@
   "description": "projeto-selecao-qa-artia",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/**/*.ts --format html:report/report.html"
+    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/**/*.ts --format html:report/report.html",
+    "test:headless": "cross-env HEADLESS=true npm run test",
+    "test:headed": "cross-env HEADLESS=false npm run test"
   },
   "author": "Luan Alves Daniel",
   "license": "ISC",
@@ -12,6 +14,7 @@
     "@cucumber/cucumber": "11.2.0",
     "@playwright/test": "1.51.1",
     "@types/node": "22.14.1",
+    "cross-env": "7.0.3",
     "playwright": "1.51.1",
     "ts-node": "10.9.2",
     "typescript": "5.8.3"

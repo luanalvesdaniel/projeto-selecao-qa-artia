@@ -2,7 +2,7 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { page } from '../../support/hooks';
 import { RegistrationPage } from '../../pages/RegistrationPage';
-import { generateRandomEmail } from '../../utils/generateEmail';
+import { generateRandomEmail } from '../../utils/generateRandomData';
 
 let registrationPage: RegistrationPage;
 let randomEmail: string;

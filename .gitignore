@@ -2,3 +2,4 @@ node_modules
 report/*.html
 report/*.json
 videos/*.webm
+package-lock.json

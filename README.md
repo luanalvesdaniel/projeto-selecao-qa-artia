@@ -23,15 +23,11 @@ O projeto conta com execução de testes automatizados utilizando Gherkin com ge
 ├── features/                    # Gherkin (Cucumber)
 │   │   ├── elements-verification.feature
 │   │   ├── invalid-email.feature
-│   │   ├── invalid-password.feature
-│   │   ├── invalid-phone.feature
-│   │   ├── valid-registration.feature
+│   │   ├── [...]
 │   │   └── step-definitions/    # Steps para execução da automação com Gherkin
 │   │       ├── elementsVerification.steps.ts
 │   │       ├── invalidEmail.steps.ts
-│   │       ├── invalidPassword.steps.ts
-│   │       ├── invalidPhone.steps.ts
-│   │       ├── validRegistration.steps.ts
+│   │       ├── [...]
 │
 ├── pages/
 │   └── RegistrationPage.ts      # Page Object com métodos para interagir com os elementos da tela de registro
@@ -71,10 +67,16 @@ cd projeto-selecao-qa-artia
 npm install
 ```
 
-### 3. Executar os testes
+### 3. Executar os testes em modo headless
 
 ```bash
-npm test
+npm run test:headless
+```
+
+### 4. Executar os testes em modo headed
+
+```bash
+npm run test:headed
 ```
 
 ![image](https://github.com/user-attachments/assets/e137b8c6-2432-42e8-ba01-93ca0219a74b)
@@ -103,17 +105,18 @@ npm test
   - Validar o preenchimento incompleto de telefone (ex: sem informar o prefixo 9)
 - ❌ Registro com e-mail inválido
   - Garantir que não está sendo informado um e-mail genérico (gmail, hotmail, etc)
+- ❌ Registro com e-mail já existente
+  - Garantir que não é possível cadastrar usuário com e-mail já existente na base
+- ❌ Registro com campos vazios
+  - Garantir que não é possível realizar cadastro com campos vazios
 
-> **Novos cenários**: validações visuais de mensagens de erro, cenários com campos obrigatórios em branco, e-mail duplicado, responsividade com telas mobile/tablets, acesso a links externos, uso de caracteres especiais, informações dos elementos (botões, campos, links) ao alterar o idioma da página, tamanho máximo e mínimo dos campos, etc. 
+> **Novos cenários**: validações visuais de mensagens de erro, responsividade com telas mobile/tablets, acesso a links externos, uso de caracteres especiais, informações dos elementos (botões, campos, links) ao alterar o idioma da página, tamanho máximo e mínimo dos campos, etc. 
 
 ---
 
 ## 🛠 Melhorias Futuras
 
 - Adicionar testes para:
-  - Campos em branco
-  - Email já cadastrado
-  - Formato inválido de email
   - Resposividade em diferentes resoluções de telas (mobile, tablets)
   - Caracteres especiais
   - Idiomas da página
