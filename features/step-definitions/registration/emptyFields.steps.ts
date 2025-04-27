@@ -8,6 +8,8 @@ let registrationPage: RegistrationPage;
 Given('que estou na tela de registro - campos vazios', async () => {
   registrationPage = new RegistrationPage(page);
   await registrationPage.navigate();
+  await page.click('[data-test-id="language-selector"]');
+  await page.click('[data-test-id="pt-button"]');
 });
 
 When('deixo todos o campos vazios', async () => {

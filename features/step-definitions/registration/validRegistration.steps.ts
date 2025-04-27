@@ -9,6 +9,8 @@ let registrationPage: RegistrationPage;
 Given('que estou na tela de registro - cadastro válido', async () => {
   registrationPage = new RegistrationPage(page);
   await registrationPage.navigate();
+  await page.click('[data-test-id="language-selector"]');
+  await page.click('[data-test-id="pt-button"]');
 });
 
 When('eu preencho todos os campos corretamente', async () => {

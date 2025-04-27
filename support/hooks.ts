@@ -33,7 +33,7 @@ After(async function (scenario) {
   if (scenario.result?.status === 'FAILED' && videoPath) {
     const targetPath = `videos/${scenario.pickle.name.replace(/\s+/g, '_')}.webm`;
     fs.renameSync(videoPath, targetPath);
-    console.log(`🎥 Vídeo salvo em: ${targetPath}`);
+    console.log(`Vídeo salvo em: ${targetPath}`);
   } else if (videoPath && fs.existsSync(videoPath)) {
     fs.unlinkSync(videoPath);
   }
