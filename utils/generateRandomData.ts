@@ -9,6 +9,17 @@ export function generateRandomEmail(): string {
   return `${prefix}@company.com`;
 }
 
+export function generateRandomEmailNotCorporate(): string {
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let prefix = '';
+
+  for (let i = 0; i < 20; i++) {
+    prefix += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  return `${prefix}@gmail.com`;
+}
+
 export function generateRandomUserName(): string {
   const firstNames = ['Ana', 'Bruno', 'Carlos'];
   const lastNames = ['Silva', 'Souza', 'Oliveira'];
