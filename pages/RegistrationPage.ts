@@ -7,6 +7,21 @@ export class RegistrationPage {
     await this.page.goto('https://app2.artia.com/users/registration');
   }
 
+  async selectPortugueseLanguage() {
+    await this.page.click('[data-test-id="language-selector"]');
+    await this.page.click('[data-test-id="pt-button"]');
+  }
+
+  async selectEnglishLanguage() {
+    await this.page.click('[data-test-id="language-selector"]');
+    await this.page.click('[data-test-id="en-button"]');
+  }
+
+  async selectEspanishLanguage() {
+    await this.page.click('[data-test-id="language-selector"]');
+    await this.page.click('[data-test-id="es-button"]');
+  }
+
   async fillUserName(name: string) {
     await this.page.fill('[data-test-id="userName"]', name);
   }
