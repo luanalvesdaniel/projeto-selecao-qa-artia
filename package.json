@@ -4,7 +4,7 @@
   "description": "projeto-selecao-qa-artia",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/**/*.ts --format html:report/report.html",
+    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/report.html",
     "test:headless": "cross-env HEADLESS=true npm run test",
     "test:headed": "cross-env HEADLESS=false npm run test"
   },
