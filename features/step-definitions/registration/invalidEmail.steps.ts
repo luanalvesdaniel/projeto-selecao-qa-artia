@@ -21,10 +21,6 @@ When('eu preencho todos os campos corretamente exceto o e-mail {string}', async 
   await registrationPage.fillUserPhone(randomPhone);
 
   await registrationPage.fillUserEmail(email);
-
-  const randomPassword = generateRandomPassword();
-  await registrationPage.fillUserPassword(randomPassword);
-
 });
 
 When('eu clico no botão de criar conta com o e-mail não corporativo', async () => {
