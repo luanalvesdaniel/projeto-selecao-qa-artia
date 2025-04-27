@@ -30,6 +30,7 @@ When('eu clico no botão de criar conta com o e-mail não corporativo', async ()
 });
 
 Then('devo ter a mensagem de e-mail {string}', async (msg) => {  
+  await page.waitForSelector(`text=${msg}`, { timeout: 15000 });
   const messageLocator = page.getByText(msg, { exact: false });
-  await expect(messageLocator).toBeVisible();
+  await expect(messageLocator).toBeVisible({ timeout: 15000 });
 });

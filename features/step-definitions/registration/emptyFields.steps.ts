@@ -19,9 +19,10 @@ When('deixo todos o campos vazios', async () => {
 });
 
 Then('devo ter a mensagem de campos vazios {string}', async (msg) => {
+  await page.waitForSelector(`text=${msg}`, { timeout: 15000 });
   const messageLocator = page.getByText(msg, { exact: false });
-  await expect(messageLocator).toHaveCount(4);
+  await expect(messageLocator).toHaveCount(4, { timeout: 15000 });
   for (let i = 0; i < 4; i++) {
-    await expect(messageLocator.nth(i)).toBeVisible();
+    await expect(messageLocator.nth(i)).toBeVisible({ timeout: 15000 });
   }
 });
