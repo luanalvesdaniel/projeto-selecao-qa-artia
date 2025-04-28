@@ -58,10 +58,12 @@ Given('que estou na tela de registro validando em Espanhol', async () => {
 
 When('eu escolho o idioma Espanhol', async () => {
   await page.click('[data-test-id="language-selector"]');
+  await page.waitForTimeout(1000);
   await page.click('[data-test-id="es-button"]');
 });
 
 Then('confirmo as informações em Espanhol', async () => {
+  await page.waitForTimeout(1000);
   expect(await page.textContent('label[for="userName"]')).toContain('Nombre');
   expect(await page.getAttribute('input[data-test-id="userName"]', 'placeholder')).toBe('Informar a su nombre');
 

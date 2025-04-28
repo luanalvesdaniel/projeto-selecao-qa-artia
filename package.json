@@ -4,7 +4,7 @@
   "description": "projeto-selecao-qa-artia",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts",
+    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/report.html",
     "test:desktop": "cross-env RESOLUTION=desktop cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/desktop.html",
     "test:tablet": "cross-env RESOLUTION=tablet cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/tablet.html",
     "test:mobile": "cross-env RESOLUTION=mobile cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/mobile.html",
