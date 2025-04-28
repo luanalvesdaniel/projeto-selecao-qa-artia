@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido como parte do desafio prático para a vaga de Analista de QA e Automação na empresa Artia.
 
-O projeto conta com execução de testes automatizados utilizando Gherkin com geração de reporte html, vídeo em caso de falha e execução via GitHub Actions (CI/CD)
+O projeto conta com execução de testes automatizados na tela de **Registro** utilizando Gherkin com geração de reporte html, vídeo em caso de falha e execução via GitHub Actions (CI/CD)
 
 ## ✅ Tecnologias Utilizadas
 
@@ -19,12 +19,12 @@ O projeto conta com execução de testes automatizados utilizando Gherkin com ge
 .
 ├── .github/
 │   ├── workflows/
-│   │   ├── node.js.yml          # Contém job e steps para execução na GitHub Actions
+│   │   ├── node.js.yml          # Contém job e steps para execução no GitHub Actions
 ├── features/                    # Gherkin (Cucumber)
 │   │   ├── elements-verification.feature
 │   │   ├── invalid-email.feature
 │   │   ├── [...]
-│   │   └── step-definitions/    # Steps para execução da automação com Gherkin
+│   │   └── step-definitions/registration    # Steps para execução da automação com Gherkin
 │   │       ├── elementsVerification.steps.ts
 │   │       ├── invalidEmail.steps.ts
 │   │       ├── [...]
@@ -36,12 +36,13 @@ O projeto conta com execução de testes automatizados utilizando Gherkin com ge
 │   └── hooks.ts                 # Configurações de antes/depois dos testes (browser, vídeo, etc)
 │
 ├── utils/
-│   └── generateEmail.ts         # Função para gerar emails aleatórios válidos
+│   └── generateRandomData.ts    # Função para gerar dados aleatórios
 │
 ├── report/
-│   └── report.html              # Relatório HTML dos testes (gerado após execução)
+│   ├── desktop.html              # Relatório HTML dos testes para cada resolução (gerado após execução local ou no GitHub Actions via link)
+│   ├── [...]
 │
-├── videos/                      # Vídeos dos testes com falha
+├── videos/                      # Vídeos dos testes de cenários com falha
 │
 ├── playwright.config.ts         # Configurações globais do Playwright
 ├── tsconfig.json                # Configurações do compilador TypeScript
@@ -99,30 +100,25 @@ npm run test:headed
   - Garante que os elementos esperados estão visíveis em tela
 - ✅ Registro com dados válidos
   - Caminho feliz pra garantir o que se espera de um cadastro correto
+- ✅ Validação de idioma
+  - Garante correta apresentação dos elementos nos 3 idiomas disponíveis da página (Português, Inglês e Espanhol)
 - ❌ Registro com senha inválida
   - Validar um cenário com senha incompleta segundo a regra de no mínimo de 6 caracteres
 - ❌ Registro com telefone inválido
-  - Validar o preenchimento incompleto de telefone (ex: sem informar o prefixo 9)
+  - Validar o preenchimento incompleto de telefone (ex: sem informar o prefixo 9 ou com menos de 11 números)
 - ❌ Registro com e-mail inválido
   - Garantir que não está sendo informado um e-mail genérico (gmail, hotmail, etc)
 - ❌ Registro com e-mail já existente
-  - Garantir que não é possível cadastrar usuário com e-mail já existente na base
+  - Garantir que não é possível cadastrar usuário com e-mail já existente
 - ❌ Registro com campos vazios
   - Garantir que não é possível realizar cadastro com campos vazios
 
-> **Novos cenários**: validações visuais de mensagens de erro, responsividade com telas mobile/tablets, acesso a links externos, uso de caracteres especiais, informações dos elementos (botões, campos, links) ao alterar o idioma da página, tamanho máximo e mínimo dos campos, etc. 
-
 ---
 
-## 🛠 Melhorias Futuras
+## ⚠️ Problemas encontrados
 
-- Adicionar testes para:
-  - Resposividade em diferentes resoluções de telas (mobile, tablets)
-  - Caracteres especiais
-  - Idiomas da página
-  - Limites dos campos
-- Reutilizar steps comuns em um único arquivo
-- Geração aleatório de nomes, telefones e senhas
+- E-mail já existente: está retornando a seguinte mensagem após informar o e-mail: "translation missing: pt, Email já está sendo utilizado por outro usuário."
+  - Acontece o mesmo nos outros idiomas (en, es)
 
 ---
 

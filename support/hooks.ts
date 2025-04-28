@@ -1,15 +1,31 @@
 import { Before, After, setDefaultTimeout } from '@cucumber/cucumber';
 import { chromium, Browser, Page, BrowserContext } from 'playwright';
 import fs from 'fs';
-import path from 'path';
 
 export let browser: Browser;
 export let context: BrowserContext;
 export let page: Page;
 
-setDefaultTimeout(60 * 1000);
+setDefaultTimeout(60000);
 
 Before(async function () {
+
+  type Resolution = 'desktop' | 'tablet' | 'mobile';
+
+  const resolutions: Record<Resolution, { width: number; height: number }> = {
+    desktop: { width: 1920, height: 1080 },
+    tablet: { width: 834, height: 1112 },
+    mobile: { width: 390, height: 844 },
+  };
+
+  function getResolution(): Resolution {
+    const res = process.env.RESOLUTION;
+    if (res === 'desktop' || res === 'tablet' || res === 'mobile') return res;
+    return 'desktop';
+  }
+
+  const viewport = resolutions[getResolution()];
+
   const isHeadless = process.env.HEADLESS !== 'false';
 
   browser = await chromium.launch({ headless: isHeadless });

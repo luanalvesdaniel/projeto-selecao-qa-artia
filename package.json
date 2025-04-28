@@ -4,9 +4,13 @@
   "description": "projeto-selecao-qa-artia",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/report.html",
-    "test:headless": "cross-env HEADLESS=true npm run test",
-    "test:headed": "cross-env HEADLESS=false npm run test"
+    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts",
+    "test:desktop": "cross-env RESOLUTION=desktop cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/desktop.html",
+    "test:tablet": "cross-env RESOLUTION=tablet cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/tablet.html",
+    "test:mobile": "cross-env RESOLUTION=mobile cucumber-js --require-module ts-node/register --require features/step-definitions/registration/**/*.ts --format html:report/mobile.html",
+    "test:all": "npm run test:desktop && npm run test:tablet && npm run test:mobile",
+    "test:headless": "cross-env HEADLESS=true npm run test:all",
+    "test:headed": "cross-env HEADLESS=false npm run test:all"
   },
   "author": "Luan Alves Daniel",
   "license": "ISC",
