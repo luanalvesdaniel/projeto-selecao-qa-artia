@@ -38,6 +38,11 @@ export class RegistrationPage {
     await this.page.fill('#userEmail', email);
   }
 
+  async tabUserEmail() {
+    await this.page.focus('#userEmail');
+    await this.page.keyboard.press('Tab');
+  }
+
   async fillUserPassword(password: string) {
     await this.page.fill('[data-test-id="userPassword"]', password);
   }

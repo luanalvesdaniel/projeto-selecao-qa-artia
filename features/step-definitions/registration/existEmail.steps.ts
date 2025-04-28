@@ -21,6 +21,7 @@ When('eu preencho todos os campos corretamente exceto o e-mail existente {string
   await registrationPage.fillUserPhone(randomPhone);
 
   await registrationPage.fillUserEmail(email);
+  await registrationPage.tabUserEmail();
 
   const randomPassword = generateRandomPassword();
   await registrationPage.fillUserPassword(randomPassword);
