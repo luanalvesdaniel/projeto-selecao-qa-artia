@@ -90,5 +90,9 @@ export class RegistrationPage {
   async checkLinkedIn(): Promise<boolean> {
     return await this.page.locator('[data-test-id="LinkedIn"]').isVisible();
   }
+
+  async checkLogoArtiaSlogan(): Promise<boolean> {
+    return await this.page.locator('img[alt="LogoArtiaSlogan"]').isVisible();
+  }
  
 }

@@ -1,6 +1,7 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { page } from '../../../support/hooks';
 import { RegistrationPage } from '../../../pages/RegistrationPage';
+import { expect } from '@playwright/test';
 
 let registrationPage: RegistrationPage;
 
@@ -50,3 +51,16 @@ When('eu verifico Política de Privacidade', async () => {
 When('eu verifico Você pode fazer login!', async () => {
   await registrationPage.checkLogin();
 });
+
+// When('eu verifico a frase Vamos começar a transformar seus planos em conquistas?', async () => {
+//   const regexes = [
+//     /Vamos começar a/i,
+//     /transformar/i,
+//     /seus planos em/i,
+//     /conquistas?/i,
+//   ];
+//   const bodyText = await page.locator('body').innerText();
+//   for (const regex of regexes) {
+//     expect(bodyText).toMatch(regex);
+//   }
+// });

@@ -1,6 +1,5 @@
 import { Before, After, setDefaultTimeout } from '@cucumber/cucumber';
 import { chromium, Browser, Page, BrowserContext } from 'playwright';
-import fs from 'fs';
 
 export let browser: Browser;
 export let context: BrowserContext;
@@ -17,28 +16,32 @@ Before(async function () {
     tablet: { width: 834, height: 1112 },
     mobile: { width: 390, height: 844 },
   };
-
+  
   function getResolution(): Resolution {
     const res = process.env.RESOLUTION;
     if (res === 'desktop' || res === 'tablet' || res === 'mobile') return res;
     return 'desktop';
   }
-
+  
   const viewport = resolutions[getResolution()];
-
+  
   const isHeadless = process.env.HEADLESS !== 'false';
-
+  
   browser = await chromium.launch({ headless: isHeadless });
-
+  
   context = await browser.newContext({
+    viewport,
     recordVideo: {
       dir: 'videos/',
-      size: { width: 800, height: 600 }
+      size: { width: viewport.width, height: viewport.height }
     }
   });
-
+  
   page = await context.newPage();
 });
+
+const fs = require('fs');
+const path = require('path');
 
 After(async function (scenario) {
   const video = await page.video();
@@ -46,11 +49,17 @@ After(async function (scenario) {
 
   await browser?.close();
 
-  if (scenario.result?.status === 'FAILED' && videoPath) {
-    const targetPath = `videos/${scenario.pickle.name.replace(/\s+/g, '_')}.webm`;
-    fs.renameSync(videoPath, targetPath);
+  if (scenario.result?.status === 'FAILED' && video) {
+    const targetPath = path.join('videos', `${scenario.pickle.name.replace(/\s+/g, '_')}.webm`);
+    await video.saveAs(targetPath);
     console.log(`Vídeo salvo em: ${targetPath}`);
   } else if (videoPath && fs.existsSync(videoPath)) {
-    fs.unlinkSync(videoPath);
+    setTimeout(() => {
+      try {
+        fs.unlinkSync(videoPath);
+      } catch (err) {
+        console.error('Erro ao deletar vídeo:', err);
+      }
+    }, 1000);
   }
 });

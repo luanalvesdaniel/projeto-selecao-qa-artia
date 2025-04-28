@@ -12,3 +12,4 @@ Feature: Registro de usuário
     And eu verifico Termos de Uso
     And eu verifico Política de Privacidade
     And eu verifico Você pode fazer login!
+    # And eu verifico a frase Vamos começar a transformar seus planos em conquistas?

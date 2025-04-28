@@ -13,6 +13,13 @@ O projeto conta com execução de testes automatizados na tela de **Registro** u
 
 ---
 
+## 💡 Sugestão de Plugins para VS Code
+
+- Cucumber
+  - Ajudará a visualizar melhor as features e indicação de falta de steps caso não tenha
+
+---
+
 ## 📁 Estrutura de Pastas
 
 ```
@@ -53,7 +60,7 @@ O projeto conta com execução de testes automatizados na tela de **Registro** u
 
 ## 🚀 Como executar o projeto
 
-- Necessário instalar o node.js [Node.js](https://nodejs.org/en/download)
+- Necessário instalar o node.js: [baixar clicando aqui](https://nodejs.org/en/download)
 
 ### 1. Clonar o repositório
 
@@ -68,29 +75,35 @@ cd projeto-selecao-qa-artia
 npm install
 ```
 
-### 3. Executar os testes em modo headless
+### 3. Executar os testes em modo headless e em todas as resoluções (desktop, tablet e mobile)
 
 ```bash
 npm run test:headless
 ```
 
-### 4. Executar os testes em modo headed
+### 4. Executar os testes em modo headed e em todas as resoluções (desktop, tablet e mobile)
 
 ```bash
 npm run test:headed
 ```
 
+### 5. Executar os testes em modo headless e em resolução padrão
+
+```bash
+npm run test
+```
+
 ![image](https://github.com/user-attachments/assets/e137b8c6-2432-42e8-ba01-93ca0219a74b)
 
 
-> O relatório será gerado em `report/report.html`.  
+> Os relatórios serão gerado em `report/`.  
 > Em caso de falha, o vídeo do teste será salvo na pasta `videos/`.
 
 ### 4. Executar via GitHub Actions
 
 > No repositório, ir em **Actions**.  
-> Clicar em **Node.js CI / Rodar Actions / Re-run all jobs**
-> Verificar que executa normalmente e em `Jobs / build / Upload HTML Report` é possível baixar o report.html
+> Clicar em **Node.js CI / Rodar Actions / Re-run all jobs**.
+> Verificar que executa normalmente e em `Jobs / build / Upload HTML Report` é possível baixar os relatórios.
 
 ---
 
@@ -102,6 +115,8 @@ npm run test:headed
   - Caminho feliz pra garantir o que se espera de um cadastro correto
 - ✅ Validação de idioma
   - Garante correta apresentação dos elementos nos 3 idiomas disponíveis da página (Português, Inglês e Espanhol)
+- ✅ Testes em resoluções diferentes (desktop, tablet, celular)
+  - Garante o correto funcionamento de interações e/ou validações nos elementos em tela
 - ❌ Registro com senha inválida
   - Validar um cenário com senha incompleta segundo a regra de no mínimo de 6 caracteres
 - ❌ Registro com telefone inválido
@@ -119,6 +134,8 @@ npm run test:headed
 
 - E-mail já existente: está retornando a seguinte mensagem após informar o e-mail: "translation missing: pt, Email já está sendo utilizado por outro usuário."
   - Acontece o mesmo nos outros idiomas (en, es)
+- Validação de elementos: exceto pela resolução desktop, não funciona a validação da frase "Vamos começar a transformar seus planos em conquistas?"
+  - O elemento que tem a frase desaparece, portanto essa feature está comentada no código (step e feature)
 
 ---
 
