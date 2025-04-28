@@ -2,7 +2,14 @@
 
 Este projeto foi desenvolvido como parte do desafio prático para a vaga de Analista de QA e Automação na empresa Artia.
 
-O projeto conta com execução de testes automatizados na tela de **Registro** utilizando Gherkin com geração de reporte html, vídeo em caso de falha e execução via GitHub Actions (CI/CD)
+O projeto conta com execução de testes automatizados na tela de **Registro**:
+- Utilizando Cucumber (Gherkin), Playwright, Page Objects Model (POM) em Typescript
+- Geração de relatório html e vídeo em caso de falha
+- Execução via GitHub Actions (CI/CD)
+  - É possível baixar os relatórios
+- Reprodução em multi resoluções, sendo em modo headless ou headed (com ou sem execução visual do playwright)
+  - Desktop (1920x1080), tablet (834x1112) e mobile (390x844)
+- Geração randômica de Nome, Telefone, E-mail e Senha
 
 ## ✅ Tecnologias Utilizadas
 
