@@ -93,8 +93,9 @@ npm run test:headed
 npm run test
 ```
 
-![image](https://github.com/user-attachments/assets/e137b8c6-2432-42e8-ba01-93ca0219a74b)
+### Print de relatório
 
+![image](https://github.com/user-attachments/assets/c2dedb27-6a75-4e11-95d2-c87f0752d4c8)
 
 > Os relatórios serão gerado em `report/`.  
 > Em caso de falha, o vídeo do teste será salvo na pasta `videos/`.
