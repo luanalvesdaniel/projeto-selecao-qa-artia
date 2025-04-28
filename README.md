@@ -75,19 +75,25 @@ cd projeto-selecao-qa-artia
 npm install
 ```
 
-### 3. Executar os testes em modo headless e em todas as resoluções (desktop, tablet e mobile)
+### 3. Instalar playwright
+
+```bash
+npx playwright install
+```
+
+### 4. Executar os testes em modo headless e em todas as resoluções (desktop, tablet e mobile)
 
 ```bash
 npm run test:headless
 ```
 
-### 4. Executar os testes em modo headed e em todas as resoluções (desktop, tablet e mobile)
+### 5. Executar os testes em modo headed e em todas as resoluções (desktop, tablet e mobile)
 
 ```bash
 npm run test:headed
 ```
 
-### 5. Executar os testes em modo headless e em resolução padrão
+### 6. Executar os testes em modo headless e em resolução padrão
 
 ```bash
 npm run test
